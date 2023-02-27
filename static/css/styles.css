@@ -599,7 +599,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -11555,14 +11555,17 @@ body {
   letter-spacing: 0.15rem;
   border: 0;
 }
-
 .masthead {
   position: relative;
   width: 100%;
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
+<<<<<<< HEAD
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("static\assets\img\bg-masthead.jpg");
+=======
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-masthead.jpg");
+>>>>>>> cd0ac8e8be3f2975f84af11cb2ad52b938f627ae
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11581,8 +11584,7 @@ body {
 .masthead h2, .masthead .h2 {
   max-width: 20rem;
   font-size: 1rem;
-}
-@media (min-width: 768px) {
+}@media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
     font-size: 4rem;
     line-height: 4rem;
@@ -11640,8 +11642,12 @@ body {
 }
 
 .signup-section {
-  padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("static/assets/img/bg-signup.jpg");
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/test.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

@@ -5,6 +5,9 @@ import os
 from werkzeug.utils import secure_filename
  
 app = Flask(__name__)
+app.config.update(
+    TEMPLATES_AUTO_RELOAD=True
+)
  
 UPLOAD_FOLDER = 'static/uploads/'
  
@@ -43,11 +46,19 @@ def upload_image():
     else:
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
- 
+
+@app.route('/generate',methods=['POST'])
+def generate():
+    if request.method == 'POST' : 
+        title = request.form["title"] 
+        print(title)
+        return render_template('generate.html')
+    return render_template('generate.html')
+
 @app.route('/display/<filename>')
 def display_image(filename):
     #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
- 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
