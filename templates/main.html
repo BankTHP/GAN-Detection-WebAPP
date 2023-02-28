@@ -56,9 +56,9 @@
 <button id="btn13">Young</button>
 <button id="btn14">Home</button>
 <button id="btn15">Generate</button>
+<button id="btn16">Generate1</button>
 
 <script>
-    var title = "TestTitle";
     const buttons = document.querySelectorAll("button");
 for (let i = 0; i < buttons.length; i++) {
     const buttonText = buttons[i].textContent;
@@ -68,6 +68,9 @@ for (let i = 0; i < buttons.length; i++) {
                 title:title,
             });
 		    window.location.href = '/generate';
+        }
+        else if (buttonText == 'Generate1'){
+            window.location.href = '/generate';
         }
         else{
             window.alert(`${buttonText}`)

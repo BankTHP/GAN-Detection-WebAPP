@@ -47,7 +47,7 @@ def upload_image():
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
 
-@app.route('/generate',methods=['POST'])
+@app.route('/generate',methods=['GET','POST'])
 def generate():
     if request.method == 'POST' : 
         title = request.form["title"] 
