@@ -25,11 +25,11 @@ def allowed_file(filename):
 def index():
     return render_template('index.html')
 
-@app.route('/main')
+@app.route('/generate')
 def mainpage():
-    return render_template('main.html')
+    return render_template('generate.html')
  
-@app.route('/main', methods=['POST'])
+@app.route('/generate', methods=['POST'])
 def upload_image():
     if 'file' not in request.files:
         flash('No file part')
@@ -42,18 +42,41 @@ def upload_image():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #print('upload_image filename: ' + filename)
-        return render_template('main.html', filename=filename)
+        return render_template('generate.html', filename=filename)
     else:
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
 
-@app.route('/generate',methods=['GET','POST'])
+
+@app.route('/detect')
+def detectpage():
+    return render_template('detect.html')
+ 
+@app.route('/detect', methods=['POST'])
+def detect_upload_image():
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    if file.filename == '':
+        flash('No image selected for uploading')
+        return redirect(request.url)
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #print('upload_image filename: ' + filename)
+        return render_template('detect.html', filename=filename)
+    else:
+        flash('Allowed image types are - png, jpg, jpeg, gif')
+        return redirect(request.url)
+
+@app.route('/output',methods=['GET','POST'])
 def generate():
     if request.method == 'POST' : 
         title = request.form["title"] 
         print(title)
-        return render_template('generate.html')
-    return render_template('generate.html')
+        return render_template('output.html')
+    return render_template('output.html')
 
 @app.route('/display/<filename>')
 def display_image(filename):
