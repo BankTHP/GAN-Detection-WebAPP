@@ -12,28 +12,16 @@
     </a>
 </div>
 <div class="container">
-<div class="row">
-    <h2>อัพโหลดรูปภาพ</h2>
-    <p>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <ul>
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
-    </p>
     
-    <form method="post" action="/main" enctype="multipart/form-data">
+<div class="row">    
+    <form method="post" action="/output" enctype="multipart/form-data">
         <dl>
             <p>
                 <input type="file" name="file" class="form-control" autocomplete="off" required>
             </p>
         </dl>
         <p>
-            <input type="submit" value="Submit" class="btn btn-info">
+            <input type="submit" value="Detect" class="btn btn-info">
         </p>
     </form>
 </div>
