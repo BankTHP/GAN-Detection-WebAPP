@@ -11725,3 +11725,15 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+img {
+  width: 70px;
+  height: 70px;
+}
+
+
+.btn-img-icon {
+  border :0; 
+  width: 75px; 
+  height: 75px; 
+}

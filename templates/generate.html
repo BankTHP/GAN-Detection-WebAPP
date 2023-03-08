@@ -10,7 +10,16 @@
             <img alt="Qries" src="static/assets/arrow-small-left.png" width=50" height="50">
         </a>
     </div>
-<p><h1 align="center">อัพโหลดรูปเพื่อตรวจสอบ GAN Detection</h1></p>
+
+
+{% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}"width=500" height="400" >
+        </div>
+    {% endif %}
+
+    <br>
+    <p><h1 align="center">อัพโหลดรูปเพื่อตรวจสอบ GAN Detection</h1></p>
 <div class="container">
 <div class="row">
     <h2>อัพโหลดรูปภาพ</h2>
@@ -37,15 +46,11 @@
         </p>
     </form>
 </div>
-
-{% if filename %}
-        <div>
-            <img src="{{ url_for('display_image', filename=filename) }}">
-        </div>
-    {% endif %}
-
-    <br>
 <h2>Choose a Attribute:</h2>
+<button class="btn-img-icon" type="submit">
+    <img class="btn-img-icon" src="static\assets\img\icon\bald.png" alt="buttonpng" />
+  </button>
+
 <button id="btn1">Bald</button>
 <button id="btn2">Bangs</button>
 <button id="btn3">Black Hair</button>
