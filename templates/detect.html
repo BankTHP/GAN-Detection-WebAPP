@@ -1,41 +1,62 @@
 <html>
+
 <head>
-<title>GAN Detection</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>GAN Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
+
 <body>
-<p><h1 align="center">Detect</h1></p>
-<div style="position: fixed; top: 25px; left: 25px; z-index: 900">
-    <a  href="/">
-        <img alt="Qries" src="static/assets/arrow-small-left.png" width=50" height="50">
-    </a>
-</div>
-<div class="container">
-    
-<div class="row">    
-    <form method="post" action="/output" enctype="multipart/form-data">
-        <dl>
-            <p>
-                <input type="file" name="file" class="form-control" autocomplete="off" required>
-            </p>
-        </dl>
-        <p>
-            <input type="submit" value="Detect" class="btn btn-info">
-        </p>
-    </form>
-</div>
 
-{% if filename %}
-        <div>
-            <img src="{{ url_for('display_image', filename=filename) }}">
+    <div style="position: fixed; top: 25px; left: 25px; z-index: 900">
+        <a href="/">
+            <img alt="Qries" src="static/assets/arrow-small-left.png" width=50" height="50">
+        </a>
+    </div>
+    <div class="container">
+        <div class="row gx-2 justify-content-center">
+
+            <div class="col-lg-4 col-md-12">
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 align="center">Detect</h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                {% if filename %}
+                <div>
+                    <img src="{{ url_for('display_image', filename=filename) }}">
+                </div>
+                {% endif %}
+                <form method="post" action="/detect" enctype="multipart/form-data">
+                    <dl>
+                        <p>
+                            <input type="file" name="file" class="form-control" autocomplete="off" required>
+                        </p>
+                    </dl>
+                    <p>
+                        <input type="submit" value="Detect" class="btn btn-info">
+                    </p>
+                </form>
+            
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+            </div>
+
         </div>
-    {% endif %}
+    </div>
 
-    <br>
-
-
-</div>
 
 </body>
+
 </html>
