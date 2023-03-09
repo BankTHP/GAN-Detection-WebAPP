@@ -2,6 +2,7 @@
 
 <head>
     <title>GAN Detection</title>
+    <link href="static/css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
@@ -12,7 +13,6 @@
             <img alt="Qries" src="static/assets/arrow-small-left.png" width=50" height="50">
         </a>
     </div>
-
 
 {% if filename %}
         <div>
@@ -57,8 +57,8 @@
             </div>
             <div class="col-md-6">
                 <h2>Choose a Attribute:</h2>
-                <button class="btn-img-icon" type="submit">
-                    <img class="btn-img-icon" src="static\assets\img\icon\bald.png" alt="buttonpng" /> bald
+                <button type="submit">
+                    <img class="img-icon" src="static\assets\img\icon\bald.png" alt="buttonpng"/><br> bald
                   </button>
                 <button id="btn2">Bangs</button>
                 <button id="btn3">Black Hair</button>
@@ -78,7 +78,7 @@
     
     
 
-    <script>
+    <!-- <script>
         const buttons = document.querySelectorAll("button");
         for (let i = 0; i < buttons.length; i++) {
             const buttonText = buttons[i].textContent;
@@ -97,7 +97,7 @@
                 }
             });
         }
-    </script>
+    </script> -->
 
 
     </div>
